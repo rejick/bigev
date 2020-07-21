@@ -24,7 +24,7 @@ function getUserInfo() {
         headers: {
             Authorization: localStorage.getItem('token') || ''
         },
-        success: function () {
+        success: function (res) {
             if (res.status !== 0) {
                 layer.msg('获取用户信息失败')
             }
@@ -51,4 +51,9 @@ function renderAvatar(user) {
         $('.text-avatar').html(first).show()
     }
 }
+    function artListActive() {
+        $('#art_list_dd').addClass('layui-this')
+        $('#art_pub_dd').removeClass('layui-this')
+    }
+
 
